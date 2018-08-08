@@ -1,0 +1,25 @@
+{
+  "code": "0",
+  "msg": "success",
+  "result": [{
+    "id": 1,
+    "jdPin": "jd_sfsd2fdsf",
+    "deviceId": "24DN",
+    "productName": "格力空调",
+    "appKey": "23",
+    "channel": "格力空调",
+    "channelKey": "ED98-43",
+    "activationTime": "2018-02-12 10:22",
+    "vipRemainTime": "3天2时22秒"
+  }, {
+    "id": 2,
+    "jdPin": "jd_sfsd2fdsf",
+    "deviceId": "423J",
+    "productName": "叮咚音箱二代",
+    "appKey": "24",
+    "channel": "叮咚音箱",
+    "channelKey": "DFG99",
+    "activationTime": "2018-03-23 04:43",
+    "vipRemainTime": "39天6时43秒"
+  }]
+}

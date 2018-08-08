@@ -1,0 +1,18 @@
+## 主要讲述MobX的基本概念词
+- 装饰器
+- 可观察数据
+  - observable
+  - @observable
+  - observable.box()
+- 对 observables 做出反应
+  - @computed
+  - autorun
+  - when
+  - reaction
+- 改变 observables
+  - @action
+  - @action.bound
+  - asyncAction
+  - flowAction
+- MobX 常用工具
+  - toJS
