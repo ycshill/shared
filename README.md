@@ -7,4 +7,6 @@
 ## 技术分享
 - [MobX](https://github.com/ycshill/shared/issues/3)
 ## 技术早报
+偶尔有时间会更新一些有趣的东西
+- [flat() 和 flatMap()](https://github.com/ycshill/shared/issues/4)
 
