@@ -14,4 +14,6 @@
 ## 技术早报
 偶尔有时间会更新一些有趣的东西
 - [flat() 和 flatMap()](https://github.com/ycshill/shared/issues/4)
+- react 1.6.6 new feature.(待整理) ：https://alligator.io/react/whats-new-react-16.6/
+- minesweeper 代码整理：http://slicker.me/javascript/mine/minesweeper.htm
 
