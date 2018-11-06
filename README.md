@@ -4,6 +4,7 @@
 ## 读书笔记
 - [高级程序设计第三版](https://github.com/ycshill/shared/issues/1)  -- 1到5章
 - [深入浅出React和Redux](https://github.com/ycshill/shared/issues/2) -- 还需要再读
+- [图解HTTP](https://github.com/ycshill/shared/issues/5)
 ### 计划读
 - 图解http
 - http 权威指南
