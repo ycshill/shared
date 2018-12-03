@@ -9,6 +9,11 @@
 - http 权威指南
 - tcp/ip 详解，卷1
 - 深入浅出 nodejs
+- 深入浅出 webpack
+### 计划学
+- typescript
+- fullter
+
 ## 技术分享
 - [MobX](https://github.com/ycshill/shared/issues/3)
 - [HTTP扫盲](https://github.com/ycshill/shared/issues/6)
