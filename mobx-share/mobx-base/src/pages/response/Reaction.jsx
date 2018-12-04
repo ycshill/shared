@@ -33,7 +33,6 @@ class Reaction extends Component {
 
     // 改变todos的长度
     todos.push({
-      title: 'C++',
       done: false,
     });
     /**
