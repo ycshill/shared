@@ -15,6 +15,7 @@
 - typescript
 - fullter
 - Angular
+- RN
 ## 技术分享
 - [MobX](https://github.com/ycshill/shared/issues/3)
 - [HTTP扫盲](https://github.com/ycshill/shared/issues/6)
