@@ -10,6 +10,7 @@
 - tcp/ip 详解，卷1
 - 深入浅出 nodejs
 - 深入浅出 webpack
+- Learning TypeScrip
 ### 计划学
 - typescript
 - fullter
