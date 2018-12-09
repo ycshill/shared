@@ -13,6 +13,7 @@
 - Learning TypeScrip
 - Sass与Compass实战
 - 深入PostCSS Web设计
+- React 精髓
 ### 计划学
 - typescript
 - fullter
