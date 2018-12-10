@@ -15,6 +15,7 @@
 - 深入PostCSS Web设计
 - React 精髓
 - Vue.js权威指南
+- 迈向Angular 2：基于TypeScript的高性能SPA框架
 ### 计划学
 - typescript
 - fullter
