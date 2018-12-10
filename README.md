@@ -14,6 +14,7 @@
 - Sass与Compass实战
 - 深入PostCSS Web设计
 - React 精髓
+- Vue.js权威指南
 ### 计划学
 - typescript
 - fullter
