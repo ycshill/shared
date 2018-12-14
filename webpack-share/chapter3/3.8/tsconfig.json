@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "sourceMap": true,
+    // 开启对 注解 的支持
+    "experimentalDecorators": true,
+    // Angular2 依赖新的 JavaScript API 和 DOM 操作
+    "lib": [
+      "es2015",
+      "dom"
+    ]
+  },
+  "exclude": [
+    "node_modules/*"
+  ]
+}

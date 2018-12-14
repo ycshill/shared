@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "importHelpers": true, // 在把 ES6 语法转换成 ES5 语法时需要注入辅助函数， 为了不让同样的辅助函数重复的出现在多个文件中t
+    "module": "commonjs", // 编译出的代码采用的模块规范
+    "target": "es5", // 编译出的代码采用 ES 的哪个版本
+    "sourceMap": true, // 输出 Source Map 方便调试
+  },
+  "exclude": [ // 不编译这些目录里的文件
+    "node_modules"
+  ]
+}

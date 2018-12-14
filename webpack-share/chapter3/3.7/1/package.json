@@ -1,0 +1,21 @@
+{
+  "name": "3.7",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "vue": "^2.5.19"
+  },
+  "devDependencies": {
+    "css-loader": "^2.0.0",
+    "vue-loader": "^15.4.2",
+    "vue-template-compiler": "^2.5.19",
+    "webpack": "^4.27.1"
+  }
+}
