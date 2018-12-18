@@ -1,64 +1,50 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatelessWidget {
-  var card = new Card(
-    child: Column(
-      children: <Widget>[
-        ListTile(
-          title: Text(
-            '吉林省吉林市昌邑区',
-            style: TextStyle(
-              fontWeight: FontWeight.w500,
-            ),
-          ),
-          subtitle: Text(
-            '技术胖:1513938888',
-          ),
-          leading: Icon(
-            Icons.account_box,
-            color: Colors.lightBlue,
-          ),
-        ),
-        new Divider(),
-        ListTile(
-          title: new Text(
-            '北京市海淀区中国科技大学',
-            style: TextStyle(fontWeight: FontWeight.w500),
-          ),
-          subtitle: new Text('胜宏宇:1513938888'),
-          leading: new Icon(
-            Icons.account_box,
-            color: Colors.lightBlue,
-          ),
-        ),
-        new Divider(),
-        ListTile(
-          title: new Text(
-            '河南省濮阳市百姓办公楼',
-            style: TextStyle(fontWeight: FontWeight.w500),
-          ),
-          subtitle: new Text('JSPang:1513938888'),
-          leading: new Icon(
-            Icons.account_box,
-            color: Colors.lightBlue,
-          ),
-        ),
-      ],
-    ),
+void main(){
+  runApp(
+    MaterialApp(
+      title: '页面跳转',
+      home: new FirstScreen(),
+    )
   );
+}
+
+class FirstScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: '卡片布局',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('卡片布局'),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('第一页'),
+      ),
+      body: Center(
+        child: RaisedButton(
+          child: Text('跳转到第二页'),
+          onPressed: (){
+            Navigator.push(context, MaterialPageRoute(
+              builder: (context) => new SecondScreen()
+            ));
+          },
         ),
-        body: Center(
-          child: card,
-        ),
+      ),
+    );
+  }
+}
+
+class SecondScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('第二页'),
+      ),
+      body: Center(
+        child: RaisedButton(
+          child: Text('跳转到第一页'),
+          onPressed: (){
+            Navigator.pop(context);
+          },
+        )
+
       ),
     );
   }
