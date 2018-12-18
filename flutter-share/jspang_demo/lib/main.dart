@@ -1,68 +1,71 @@
 import 'package:flutter/material.dart';
-// 创建一个商品类
-class Product {
-  final String title; // 商品标题
-  final String description; // 商品描述
-  Product(this.title, this.description);
+
+class RouteButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return RaisedButton(
+      child: Text('要电话'),
+      onPressed: (){
+        _getPhone(context);
+      },
+    );
+  }
+
+  _getPhone(BuildContext context) async{
+    final result = await Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => PhonesPage())
+    );
+    Scaffold.of(context).showSnackBar(SnackBar(content: Text('$result')));
+  }
 }
 
-// 定义一个ProductList 列表
-class ProductList extends StatelessWidget {
-  final List<Product> products;
-  ProductList({Key key, @required this.products}):super(key: key);
-
+class FirstPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('商品列表'),
+        title: Text('首页'),
       ),
-      body: ListView.builder(
-        itemCount: products.length,
-        itemBuilder: (context, index) {
-          return ListTile(
-            title: Text(products[index].title),
-            onTap: (){
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => new ProductDetail(product: products[index]),
-                )
-              );
-            },
-          );
-        },
+      body: Center(
+        child: RouteButton(),
       ),
     );
   }
 }
 
-class ProductDetail extends StatelessWidget {
-
-  final Product product;
-  ProductDetail({Key key, @required this.product}):super(key: key);
-
+class PhonesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('商品详情页'),),
+      appBar: AppBar(
+        title: Text('电话号码页面'),
+      ),
       body: Center(
-        child: Text('${product.description}'),
+        child: Column(
+          children: <Widget>[
+            RaisedButton(
+              child: Text('男1'),
+              onPressed: () {
+                Navigator.pop(context, '19999999');
+              },
+            ),
+            RaisedButton(
+              child: Text('男2'),
+              onPressed: () {
+                Navigator.pop(context, '343434');
+              },
+            )
+          ],
+        ),
       ),
     );
   }
 }
 
-void main(){
-  runApp(
-    MaterialApp(
-      title: '数据传递案例',
-      home: ProductList(
-        products: List.generate(
-          20,
-          (i) => Product('商品$i', '这是一个商品详情，编号为: $i'),
-        ),
-      )
-    )
-  );
+void main() {
+  runApp(MaterialApp(
+    title: '页面跳转并返回数据',
+    home: FirstPage(),
+  ));
 }
