@@ -25,10 +25,18 @@ void main() {
   int a = 10;
   int b = 11;
 
-  print(a + b); // 21
-  print(a - b); // -1
-  print(a * b); // 110
-  print(b / a); // 1.1
-  print(b ~/ a); // 1
-  print(b % a); // 1
+  print(a == b); // false
+  print(a != b); // true
+  print(a > b); // false
+  print(a < b); // true
+  print(a >= b); // false
+  print(a <= b); // true
+  print(a++); // 10
+  print(++a); // 12 上面的表达式使用a的值的时候，就++啦
+  print(a--); // 12
+  print(--a); // 10
+
+  String strA = '123';
+  String strB = '123';
+  print(strA == strB); // true
 }
