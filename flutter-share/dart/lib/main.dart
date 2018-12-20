@@ -22,21 +22,9 @@ void main() {
     home: FirstPage(),
   ));
 
-  int a = 10;
-  int b = 11;
-
-  print(a == b); // false
-  print(a != b); // true
-  print(a > b); // false
-  print(a < b); // true
-  print(a >= b); // false
-  print(a <= b); // true
-  print(a++); // 10
-  print(++a); // 12 上面的表达式使用a的值的时候，就++啦
-  print(a--); // 12
-  print(--a); // 10
-
-  String strA = '123';
-  String strB = '123';
-  print(strA == strB); // true
+  bool a = true;
+  bool b = false;
+  print(!a); // false
+  print(a && b); // false
+  print(a || b); // true
 }
