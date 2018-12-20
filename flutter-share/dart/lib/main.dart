@@ -22,13 +22,13 @@ void main() {
     home: FirstPage(),
   ));
 
-  dynamic a = 0;
-  print(a); // 0
-  a = 'hello';
-  print(a); // hello
+  int a = 10;
+  int b = 11;
 
-  List arr = new List<dynamic>();
-  arr.add(1);
-  arr.add('hello');
-  print(arr); // [1, hello]
+  print(a + b); // 21
+  print(a - b); // -1
+  print(a * b); // 110
+  print(b / a); // 1.1
+  print(b ~/ a); // 1
+  print(b % a); // 1
 }
