@@ -22,22 +22,4 @@ void main() {
     home: FirstPage(),
   ));
 
-  var a;
-  print(a);  // null
-
-  a = 10;
-  print(a); // 10
-
-  a = 'Hello Dart';
-  print(a);  // Hello Dart;
-
-  //  总结 var 和js 一样,  未初始化的时候是 null，(变量)
-
-  // 声明一个只赋值一次的变量
-  final b = 20;
-  print(b);  // 20;
-
-  // 声明一个常量（编译时）
-  const c = 30;
-  print(c); // 30
 }
