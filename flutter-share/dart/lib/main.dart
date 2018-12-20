@@ -22,9 +22,25 @@ void main() {
     home: FirstPage(),
   ));
 
-  bool a = true;
-  bool b = false;
-  print(!a); // false
-  print(a && b); // false
-  print(a || b); // true
+  int a = 10; // =
+  print(a); // 10
+
+  int b;
+  b ??= a;
+  print(b); // 10; 如果b没有值，就会读取 = 后面的值
+
+  int c = 5;
+  c ??= a;
+  print(c); // 5 如果c有值，就会读取c本身的值
+
+  print(a += b); // 20
+  print(a -= b); // 10
+  print(a *= b); // 100
+  // print(a /= b); //  value of type 'double' can't be assigned to a variable of type 'int'
+  print(a ~/= b); // 10
+  print(a %= b); // 0
+
+  double d = 11.0;
+  print(d /= b); // 1.1
+
 }
