@@ -23,23 +23,38 @@ void main() {
   ));
 
   List arr = [1, 2, 3, 4];
-  for(int i = 0; i < arr.length; i++){
-    print('$i--${arr[i]}');
-    /***
-      flutter: 0--1
-      flutter: 1--2
-      flutter: 2--3
-      flutter: 3--4
-     */
+  for (int item in arr) {
+    if (item == 2) {
+      break; // 跳出按着的循环
+    }
+    print(item); // 1
   }
-
-  for(int item in arr){
-    print(item);
-    /**
-      flutter: 1
-      flutter: 2
-      flutter: 3
-      flutter: 4
-     */
+  print('----------');
+  for (int item in arr) {
+    if (item == 2) {
+      continue;  // 跳出本次循环
+    }
+    print(item); // 1 3 4
+  }
+  print('-------');
+  List inner = ['a', 'b', 'c'];
+  for(int item in arr) {
+    for(String i in inner) {
+      print(i);
+      break;  // 跳出临近的本次循环
+      /**
+       * flutter: a
+flutter: a
+flutter: a
+flutter: a
+       */
+    }
+  }
+  print('-------');
+  for(int item in arr) {
+    for(String i in inner) {
+      print(i);
+      continue; // 4次 abc
+    }
   }
 }
