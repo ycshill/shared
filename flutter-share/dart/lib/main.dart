@@ -22,16 +22,10 @@ void main() {
     home: FirstPage(),
   ));
 
-  print(getPerson('lily', grade: '一年级')); // name-lily,age-null,grade-一年级
-  print(getPersonInfo('lily',10,)); // 使用位置可选参数:name-lily,age-10,grade-null
+  print(getPerson('lily', grade: '一年级')); // name-lily,age-10,grade-一年级
 }
 
 // 使用命名可选参数
-String getPerson(String name, {int age, String grade}) {
+String getPerson(String name, {int age = 10, String grade = "大学生"}) {
   return 'name-$name,age-$age,grade-$grade';
-}
-
-// 使用位置可选参数
-String getPersonInfo(String name, [int age, String grade]) {
-  return '使用位置可选参数:name-$name,age-$age,grade-$grade';
 }
