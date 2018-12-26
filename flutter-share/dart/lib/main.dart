@@ -22,18 +22,16 @@ void main() {
     home: FirstPage(),
   ));
 
-  print(getPerson('lily', 26)); // name-lily,age-26
-  print(printPerson('lily', 24)); // null, 如果加上void 会报错
+  print(getPerson('lily', grade: '一年级')); // name-lily,age-null,grade-一年级
+  print(getPersonInfo('lily',10,)); // 使用位置可选参数:name-lily,age-10,grade-null
 }
 
-String getPerson(String name, int age) {
-  return 'name-$name,age-$age';
-}
-// 方法名和参数都可以不定义类型
-// 没有返回类型的，默认返回null
-printPerson(name, age) {
-  print('name-$name,age-$age');
+// 使用命名可选参数
+String getPerson(String name, {int age, String grade}) {
+  return 'name-$name,age-$age,grade-$grade';
 }
 
-// 使用箭头函数
-printPerson1(name, age) => 'name-$name,age-$age';
+// 使用位置可选参数
+String getPersonInfo(String name, [int age, String grade]) {
+  return '使用位置可选参数:name-$name,age-$age,grade-$grade';
+}
