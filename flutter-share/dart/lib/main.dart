@@ -22,40 +22,18 @@ void main() {
     home: FirstPage(),
   ));
 
-  String language = 'java';
-  // break;
-  switch(language) {
-    case 'js':
-      print('js');
-      break;
-    case 'java':
-      print('java');
-      break;
-    case 'dart':
-      print('dart');
-      break;
-    default:
-      print('none');
-  }
-  // 使用 continue
-  String language1 = 'dart';
-  switch(language1) {
-  Tag:
-   case 'js':
-      print('js');
-      break;
-    case 'java':
-      print('java');
-      break;
-    case 'dart':
-      print('dart');
-      continue Tag;
-    default:
-      print('none');
-  }
-  /**
-   * flutter: java
-     flutter: dart
-     flutter: js
-   */
+  print(getPerson('lily', 26)); // name-lily,age-26
+  print(printPerson('lily', 24)); // null, 如果加上void 会报错
 }
+
+String getPerson(String name, int age) {
+  return 'name-$name,age-$age';
+}
+// 方法名和参数都可以不定义类型
+// 没有返回类型的，默认返回null
+printPerson(name, age) {
+  print('name-$name,age-$age');
+}
+
+// 使用箭头函数
+printPerson1(name, age) => 'name-$name,age-$age';
