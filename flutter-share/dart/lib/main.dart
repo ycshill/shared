@@ -22,39 +22,40 @@ void main() {
     home: FirstPage(),
   ));
 
-  List arr = [1, 2, 3, 4];
-  for (int item in arr) {
-    if (item == 2) {
-      break; // 跳出按着的循环
-    }
-    print(item); // 1
+  String language = 'java';
+  // break;
+  switch(language) {
+    case 'js':
+      print('js');
+      break;
+    case 'java':
+      print('java');
+      break;
+    case 'dart':
+      print('dart');
+      break;
+    default:
+      print('none');
   }
-  print('----------');
-  for (int item in arr) {
-    if (item == 2) {
-      continue;  // 跳出本次循环
-    }
-    print(item); // 1 3 4
+  // 使用 continue
+  String language1 = 'dart';
+  switch(language1) {
+  Tag:
+   case 'js':
+      print('js');
+      break;
+    case 'java':
+      print('java');
+      break;
+    case 'dart':
+      print('dart');
+      continue Tag;
+    default:
+      print('none');
   }
-  print('-------');
-  List inner = ['a', 'b', 'c'];
-  for(int item in arr) {
-    for(String i in inner) {
-      print(i);
-      break;  // 跳出临近的本次循环
-      /**
-       * flutter: a
-flutter: a
-flutter: a
-flutter: a
-       */
-    }
-  }
-  print('-------');
-  for(int item in arr) {
-    for(String i in inner) {
-      print(i);
-      continue; // 4次 abc
-    }
-  }
+  /**
+   * flutter: java
+     flutter: dart
+     flutter: js
+   */
 }
