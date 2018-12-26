@@ -22,10 +22,28 @@ void main() {
     home: FirstPage(),
   ));
 
-  print(getPerson('lily', grade: '一年级')); // name-lily,age-10,grade-一年级
+  Function fun = printHello;  // 作为一个参数，传递给变量
+  fun(); // hello
+
+  List hello = ['h', 'e', 'l', 'l', 'o'];
+  print(ListTimes(hello, times));  // [hhh, eee, lll, lll, ooo]
+
 }
 
-// 使用命名可选参数
-String getPerson(String name, {int age = 10, String grade = "大学生"}) {
-  return 'name-$name,age-$age,grade-$grade';
+void printHello() {
+  print('hello');
+}
+
+// 返回三次该字符串
+String times(str) {
+  return str * 3;
+}
+
+// 根据List 返回一个新的List
+List ListTimes(List list, String times(str)) {  // 作为一个函数的参数传入
+  for(int i = 0; i< list.length; i++) {
+    list[i] = times(list[i]);
+  }
+
+  return list;
 }
