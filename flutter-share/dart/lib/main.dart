@@ -22,27 +22,39 @@ void main() {
     home: FirstPage(),
   ));
 
-  Function fun = printHello;  // 作为一个参数，传递给变量
-  fun(); // hello
+  // 匿名方法
+  Function fun = (str) {
+    print('hello---$str');
+  };
+
+  fun('1'); // hello---1
+
+  // 自身直接调用
+  ((){
+    print('自己直接调用');
+  })();
 
   List hello = ['h', 'e', 'l', 'l', 'o'];
-  print(ListTimes(hello, times));  // [hhh, eee, lll, lll, ooo]
+  // 匿名函数作为参数传递
+  // print(listTimes(hello, (str){ return str * 3; }));  // [hhh, eee, lll, lll, ooo]
+  print(listTimes1(hello)); // [hhh, eee, lll, lll, ooo]
 
 }
 
-void printHello() {
-  print('hello');
-}
-
-// 返回三次该字符串
-String times(str) {
-  return str * 3;
-}
-
-// 根据List 返回一个新的List
-List ListTimes(List list, String times(str)) {  // 作为一个函数的参数传入
-  for(int i = 0; i< list.length; i++) {
+// 将自身调用三次
+List listTimes(List list, String times(str)) {
+  for (int i = 0; i < list.length; i++) {
     list[i] = times(list[i]);
+  }
+
+  return list;
+}
+
+// 匿名函数在方法中使用
+List listTimes1(List list){
+  Function fun = (str) { return str * 3; };
+   for (int i = 0; i < list.length; i++) {
+    list[i] = fun(list[i]);
   }
 
   return list;
