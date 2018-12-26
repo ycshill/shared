@@ -22,25 +22,24 @@ void main() {
     home: FirstPage(),
   ));
 
-  int a = 10; // =
-  print(a); // 10
+  List arr = [1, 2, 3, 4];
+  for(int i = 0; i < arr.length; i++){
+    print('$i--${arr[i]}');
+    /***
+      flutter: 0--1
+      flutter: 1--2
+      flutter: 2--3
+      flutter: 3--4
+     */
+  }
 
-  int b;
-  b ??= a;
-  print(b); // 10; 如果b没有值，就会读取 = 后面的值
-
-  int c = 5;
-  c ??= a;
-  print(c); // 5 如果c有值，就会读取c本身的值
-
-  print(a += b); // 20
-  print(a -= b); // 10
-  print(a *= b); // 100
-  // print(a /= b); //  value of type 'double' can't be assigned to a variable of type 'int'
-  print(a ~/= b); // 10
-  print(a %= b); // 0
-
-  double d = 11.0;
-  print(d /= b); // 1.1
-
+  for(int item in arr){
+    print(item);
+    /**
+      flutter: 1
+      flutter: 2
+      flutter: 3
+      flutter: 4
+     */
+  }
 }
