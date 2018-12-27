@@ -22,46 +22,21 @@ void main() {
     home: FirstPage(),
   ));
 
-  Person p = new Person.born();
-  print(p.name); // lily 这样的好处感觉在定义的时候不用初始化，在内部已经写好了，不错
-  Person p1 = new Person.middle();
-  print(p1.age); // 16
-
-  Man man1 = new Man.small('honhong');
-  print(man1.age);
-
-  Man man2 = new Man.born();
-  print('${man2.name}, ${man2.age}'); // man 0
+  Point dot = new Point(2, 4);
+  print(dot.sum); // 6
 }
 
-class Person {
-  String name;
-  int age;
+class Point {
+  final num x;
+  final num y;
 
-  Person(this.name, this.age);
+  final num sum;
 
-  Person.born(){
-    name = 'baby';
-    age = 0;
-  }
+  // 可以在构造函数主体运行之前初始化实例变量，初始值设定项用逗号分开
+  // 这个挺好的，能够通过其他的变量来初始化其他的变量
+  Point(x, y)
+    : x = x,
+      y = y,
+      sum = x + y;
 
-  Person.middle() {
-    name = 'junior';
-    age = 16;
-  }
-
-}
-
-// 实现继承，实现继承，在里面不用定义变量，父类命名的构造函数不会被子类继承，要使用:调用
-class Man extends Person {
-  Man(String name, int age):super(name, age);
-
-  // 调用自身的构造函数，自身又调用父类的构造函数
-  Man.small(String name):this(name, 0);
-
-  Man.old(String name):this(name, 45);
-
-  Man.born():super.born(){
-    name= 'man';
-  }
 }
