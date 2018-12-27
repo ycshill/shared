@@ -22,32 +22,39 @@ void main() {
     home: FirstPage(),
   ));
 
- Man xiaoming = new Man('xiaoming', 24);
- xiaoming.run(); // i am a man, i can run
+  offsetPoint dot = offsetPoint(1, 2, 10);
+  print(dot); // offsetPoint{x=11, y=12}
+  print(dot.x); // 11 ，调用get
+  print(dot.y); // 12
+  dot.x = 4;  // 调用set
+  print(dot); // offsetPoint{x=14, y=12}
 }
 
-class Person {
-  String name;
-  int age;
+class offsetPoint{
+  int _x;
+  int _y;
+  int offset;
 
-  Person(this.name, this.age);
-  Person.born(){
-    name = 'baby';
-    age  = 0;
+  offsetPoint(int x, int y, int offset)
+    : _x = x,
+      _y = y,
+      offset = offset {
+        print('初始化实例变量');
+      }
+
+  // 定义一个getter
+  int get x => _x + offset;
+  // getter 不能有参数，连括号都要删掉
+  int get y {
+    return _y + offset;
   }
 
-  // 定义方法
-  run() {
-    print('i can run');
-  }
-}
+  // 定义setter
+  void set x(int x) => _x = x;
+  void set y(int y) => _y = y;
 
-class Man extends Person{
-  Man(String name, int age):super(name, age);
-
-  // 重写方法
   @override
-  run() {
-    print('i am a man, i can run');
+  String toString() {
+    return 'offsetPoint{x=$x, y=$y}';
   }
 }
