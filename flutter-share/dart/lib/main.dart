@@ -22,21 +22,32 @@ void main() {
     home: FirstPage(),
   ));
 
-  Point dot = new Point(2, 4);
-  print(dot.sum); // 6
+ Man xiaoming = new Man('xiaoming', 24);
+ xiaoming.run(); // i am a man, i can run
 }
 
-class Point {
-  final num x;
-  final num y;
+class Person {
+  String name;
+  int age;
 
-  final num sum;
+  Person(this.name, this.age);
+  Person.born(){
+    name = 'baby';
+    age  = 0;
+  }
 
-  // 可以在构造函数主体运行之前初始化实例变量，初始值设定项用逗号分开
-  // 这个挺好的，能够通过其他的变量来初始化其他的变量
-  Point(x, y)
-    : x = x,
-      y = y,
-      sum = x + y;
+  // 定义方法
+  run() {
+    print('i can run');
+  }
+}
 
+class Man extends Person{
+  Man(String name, int age):super(name, age);
+
+  // 重写方法
+  @override
+  run() {
+    print('i am a man, i can run');
+  }
 }
