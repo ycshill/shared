@@ -22,40 +22,17 @@ void main() {
     home: FirstPage(),
   ));
 
-  // 匿名方法
-  Function fun = (str) {
-    print('hello---$str');
-  };
-
-  fun('1'); // hello---1
-
-  // 自身直接调用
-  ((){
-    print('自己直接调用');
-  })();
-
-  List hello = ['h', 'e', 'l', 'l', 'o'];
-  // 匿名函数作为参数传递
-  // print(listTimes(hello, (str){ return str * 3; }));  // [hhh, eee, lll, lll, ooo]
-  print(listTimes1(hello)); // [hhh, eee, lll, lll, ooo]
+  print(divide(10, 0));
 
 }
 
-// 将自身调用三次
-List listTimes(List list, String times(str)) {
-  for (int i = 0; i < list.length; i++) {
-    list[i] = times(list[i]);
+// 异常处理
+divide(int a, int b) {
+  if (b == 0) {
+    // 通过throw 抛出异常
+    // throw new IntegerDivisionByZeroException();  // 抛出的是自带的异常
+    throw new Exception('Divide by zero'); // 抛出字符串异常
+  } else {
+    return a / b;
   }
-
-  return list;
-}
-
-// 匿名函数在方法中使用
-List listTimes1(List list){
-  Function fun = (str) { return str * 3; };
-   for (int i = 0; i < list.length; i++) {
-    list[i] = fun(list[i]);
-  }
-
-  return list;
 }
