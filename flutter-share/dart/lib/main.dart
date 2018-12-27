@@ -22,34 +22,24 @@ void main() {
     home: FirstPage(),
   ));
 
-  var point = Point(2, 2);
-  print(point); // Instance of 'Point'
-  point.x = 4;
-  print(point.x); // 4
-  print(point.y); // 2
-
-  // 使用命名构造函数
-  Point dot = new Point.intPoint();
-  print(dot.x); // 1
+  Person mengfei = new Man('mengfei', 30);
+  print(mengfei.age);
 }
 
-// 定义类
-class Point {
-  num x;
-  num y;
-  // 构造函数
-  // Point(num x, num y) {
-  //   this.x = x;
-  //   this.y = y;
-  // }
 
-  // 通过语法糖来，更简单的生成构造函数
-  // Point(this.x, this.y);
+// 类的继承
+class Person {
+  String name;
+  int age;
 
-  // 命名构造函数
-  Point(this.x, this.y);
-  Point.intPoint(){
-    x = 1;
-    y = 2;
+  Person(this.name, this.age);
+  Person.born(){
+    name = 'lily';
+    age = 26;
   }
+}
+
+// 通过extends 关键字继承，然后使用:super(参数是父类的构造函数)
+class Man extends Person {
+  Man(String name, int age):super(name, age);
 }
