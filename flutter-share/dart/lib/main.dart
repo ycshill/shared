@@ -22,24 +22,46 @@ void main() {
     home: FirstPage(),
   ));
 
-  Person mengfei = new Man('mengfei', 30);
-  print(mengfei.age);
+  Person p = new Person.born();
+  print(p.name); // lily 这样的好处感觉在定义的时候不用初始化，在内部已经写好了，不错
+  Person p1 = new Person.middle();
+  print(p1.age); // 16
+
+  Man man1 = new Man.small('honhong');
+  print(man1.age);
+
+  Man man2 = new Man.born();
+  print('${man2.name}, ${man2.age}'); // man 0
 }
 
-
-// 类的继承
 class Person {
   String name;
   int age;
 
   Person(this.name, this.age);
+
   Person.born(){
-    name = 'lily';
-    age = 26;
+    name = 'baby';
+    age = 0;
   }
+
+  Person.middle() {
+    name = 'junior';
+    age = 16;
+  }
+
 }
 
-// 通过extends 关键字继承，然后使用:super(参数是父类的构造函数)
+// 实现继承，实现继承，在里面不用定义变量，父类命名的构造函数不会被子类继承，要使用:调用
 class Man extends Person {
   Man(String name, int age):super(name, age);
+
+  // 调用自身的构造函数，自身又调用父类的构造函数
+  Man.small(String name):this(name, 0);
+
+  Man.old(String name):this(name, 45);
+
+  Man.born():super.born(){
+    name= 'man';
+  }
 }
