@@ -22,17 +22,34 @@ void main() {
     home: FirstPage(),
   ));
 
-  print(divide(10, 0));
+  var point = Point(2, 2);
+  print(point); // Instance of 'Point'
+  point.x = 4;
+  print(point.x); // 4
+  print(point.y); // 2
 
+  // 使用命名构造函数
+  Point dot = new Point.intPoint();
+  print(dot.x); // 1
 }
 
-// 异常处理
-divide(int a, int b) {
-  if (b == 0) {
-    // 通过throw 抛出异常
-    // throw new IntegerDivisionByZeroException();  // 抛出的是自带的异常
-    throw new Exception('Divide by zero'); // 抛出字符串异常
-  } else {
-    return a / b;
+// 定义类
+class Point {
+  num x;
+  num y;
+  // 构造函数
+  // Point(num x, num y) {
+  //   this.x = x;
+  //   this.y = y;
+  // }
+
+  // 通过语法糖来，更简单的生成构造函数
+  // Point(this.x, this.y);
+
+  // 命名构造函数
+  Point(this.x, this.y);
+  Point.intPoint(){
+    x = 1;
+    y = 2;
   }
 }
