@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:async';
 
 
 class FirstPage extends StatelessWidget {
@@ -16,24 +17,24 @@ class FirstPage extends StatelessWidget {
 }
 
 
-void main() {
+void main() async{
   runApp(MaterialApp(
     title: 'dart 的基础语法',
     home: FirstPage(),
   ));
 
-  Man p1 = new Man('lily');
-  p1.eat();  // i eat
-}
-
-mixin Person {
-  String name;
-  eat() {
-    print('i eat');
+  try {
+    String result = await getAjoke();
+    print(result);
+  } catch(e) {
+    print(e);
   }
+  print('现在可以执行');
 }
 
-class Man with Person {
-  String name;
-  Man(this.name);
+// 使用Future 创建一个比较费时的例子
+Future<String> getAjoke() {
+  return new Future<String>.delayed(new Duration(milliseconds: 2000), () {
+    return 'this is a joke';
+  });
 }
