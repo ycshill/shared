@@ -17,7 +17,7 @@
 - Vue.js权威指南
 - 迈向Angular 2：基于TypeScript的高性能SPA框架
 ## 学习笔记
-- [Dart基础语法](https://github.com/ycshill/shared/issues/1)
+- [Dart基础语法](https://www.zybuluo.com/shilili1992/note/1371299)
 ### 计划学
 - typescript
 - fullter
