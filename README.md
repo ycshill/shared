@@ -27,6 +27,8 @@
 ## 技术分享
 - [MobX](https://github.com/ycshill/shared/issues/3)
 - [HTTP扫盲](https://github.com/ycshill/shared/issues/6)
+## 芝士图谱
+- [ES6](https://www.edrawsoft.cn/viewer/public/s/ca2a7481964410)
 ## 技术早报
 偶尔有时间会更新一些有趣的东西
 - [flat() 和 flatMap()](https://github.com/ycshill/shared/issues/4)
