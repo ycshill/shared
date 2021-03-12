@@ -38,7 +38,7 @@
     "postcss-loader": "2.0.6",
     "promise": "8.0.1",
     "react": "^16.4.2",
-    "react-dev-utils": "^3.1.0",
+    "react-dev-utils": "^11.0.4",
     "react-dom": "^16.4.2",
     "react-error-overlay": "^1.0.10",
     "react-router-dom": "^4.3.1",
