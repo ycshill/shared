@@ -8,6 +8,6 @@
   "dependencies": {},
   "devDependencies": {
     "uglifyjs-webpack-plugin": "^2.0.1",
-    "webpack": "^3.4.0"
+    "webpack": "^5.75.0"
   }
 }
